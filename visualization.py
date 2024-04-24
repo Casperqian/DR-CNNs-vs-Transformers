@@ -1,4 +1,3 @@
-# The code is modified from domainbed.scripts.train
 import timm
 import argparse
 import torch.nn as nn
@@ -106,7 +105,7 @@ if __name__ == "__main__":
         model.train()
         logits = np.round(logits, 2)
 
-        rgb_img = cv2.imread(image_path, 1)[:, :, ::-1]  # 1是读取rgb imread()读取的是BGR格式 BGR格式转换为RGB格式
+        rgb_img = cv2.imread(image_path, 1)[:, :, ::-1]  
         rgb_img = cv2.imread(image_path, 1)
         rgb_img = zoom(rgb_img, (0.5, 0.5, 1))
         rgb_img = np.float32(rgb_img) / 255
