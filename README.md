@@ -4,17 +4,20 @@ This codebase is the official implementation of Diabetic Retinopathy Detection u
 - CUDA/Python
 ## Quick Start
 (1) Download the dataset.
+
 (2) Train different models on the source domain.
 ```python
 python train.py --root "data_path" --dataset "DR2015" --output ".\results" --network "resnet34" --base_lr 1e-3 --batchsize 32 
 ```
 Note: change `--output ".\results"` to change your path to save your model.  
 Note: change `--network "resnet34"` for training on different models (e.g. `resnet-34, resnet-50, efficientnet-b1, efficientnet-b5, vit-t16, vit-s16, swinv2, convit-s`).  
-Note: change `--base_lr 1e-3` to adjust the initial learning rate.  
+Note: change `--base_lr 1e-3` to adjust the initial learning rate. 
+
 (3) Test different models on the target domain.
 ```python
 python test.py --root "data_path" --dataset "DR2015" --network "resnet34"  
 ```
+
 (4) Visualization.
 ```python
 python visualization.py --image_path "image_path" --network "resnet34" --use_cuda True
