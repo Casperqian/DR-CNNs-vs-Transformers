@@ -26,8 +26,6 @@ def get_args():
                         help='Use NVIDIA GPU acceleration')
     parser.add_argument('--image_path', type=str, default='E:\APTOS_RAW\colored_images\\No_DR\\',
                         help='Input image path')
-    # parser.add_argument('--image_path', type=str, default='E:\DR2015\colored_images\colored_images\\Mild\\',
-    #                     help='Input image path')
     parser.add_argument('--network', type=str, default='resnet-50',
                         help='network: {resnet-50}')
     args = parser.parse_args()
