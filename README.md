@@ -1,4 +1,4 @@
-# Diabetic Retinopathy Detection using Cross-Domain Colored Fundus Photography: CNNs vs. Transformers
+# Diabetic Retinopathy Detection: CNNs vs. Transformers
 This codebase is the official implementation of Diabetic Retinopathy Detection using Cross-Domain Colored Fundus Photography: CNNs vs. Transformers.
 ## Installation
 - CUDA/Python
