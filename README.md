@@ -15,7 +15,7 @@ Note: change `--base_lr 1e-3` to adjust the initial learning rate.
 
 (3) Test different models on the target domain.
 ```python
-python test.py --root "data_path" --dataset "DR2015" --network "resnet34"  
+python test.py --root "data_path" --dataset "DR2015" --network "resnet34"  --algorithm "TTFA" --use_cuda True
 ```
 
 (4) Visualization.
