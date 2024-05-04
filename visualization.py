@@ -42,21 +42,21 @@ if __name__ == "__main__":
     device = args.use_cuda
 
     if args.network == 'resnet-34':
-        ckpt = torch.load(r'./results/DR66k_resnet-34_20_acc0.8468_auc0.8846.pth')
+        ckpt = torch.load(r'./results/DR66k_resnet-34.pth')
         model = torchvision.models.resnet34()
         model.fc = nn.Linear(512, 5)
     elif args.network == 'resnet-50':
         model = torchvision.models.resnet50()
         model.fc = nn.Linear(2048, 5)
-        ckpt = torch.load(r'./results/DR66k_resnet-50_20_acc0.8573_auc0.8936.pth')
+        ckpt = torch.load(r'./results/DR66k_resnet-50.pth')
     elif args.network == 'vit-s16':
         model = timm.create_model('vit_small_patch16_224.augreg_in1k', pretrained=False)
         model.reset_classifier(num_classes=5)
-        ckpt = torch.load(r'.\results\DR66k_vit-s16_20_acc0.8387_auc0.8823.pth')
+        ckpt = torch.load(r'.\results\DR66k_vit-s16.pth')
     elif args.network == 'swinv2':
         model = timm.create_model('swinv2_cr_tiny_ns_224.sw_in1k', pretrained=False)
         model.reset_classifier(num_classes=5)
-        ckpt = torch.load(r'./results/DR66k_swinv2_best_acc0.8515_auc0.8872.pth')
+        ckpt = torch.load(r'./results/DR66k_swinv2.pth')
 
     print(model)
     print('Loading model...')
