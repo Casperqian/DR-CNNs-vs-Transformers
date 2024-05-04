@@ -93,11 +93,11 @@ def GetTestData(root, input_shape=(3, 224, 224)):
     path_3 = os.path.join(root, 'Severe/')
     path_4 = os.path.join(root, 'Proliferate_DR/')
 
-    data_0 = sorted(glob.glob(path_0 + '*'))[:525]
-    data_1 = sorted(glob.glob(path_1 + '*'))[:525]
-    data_2 = sorted(glob.glob(path_2 + '*'))[:525]
-    data_3 = sorted(glob.glob(path_3 + '*'))[:525]
-    data_4 = sorted(glob.glob(path_4 + '*'))[:525]
+    data_0 = sorted(glob.glob(path_0 + '*'))
+    data_1 = sorted(glob.glob(path_1 + '*'))
+    data_2 = sorted(glob.glob(path_2 + '*'))
+    data_3 = sorted(glob.glob(path_3 + '*'))
+    data_4 = sorted(glob.glob(path_4 + '*'))
 
     data_all = data_0 + data_1 + data_2 + data_3 + data_4
     print('Length of the whole data is: ', len(data_all))
