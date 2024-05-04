@@ -6,7 +6,7 @@ from data.prepocess import GetTrainingData, GetTestData
 from torch.utils.data import DataLoader
 import argparse
 import timm
-from Algorithm.tta import T3A, FAN
+from Algorithm.tta import T3A, TTFA
 from sklearn.metrics import accuracy_score, roc_auc_score, f1_score
 import copy
 import os
@@ -237,7 +237,7 @@ if __name__ == "__main__":
     # print('Misclassification Rates for each class: ', mis_rate)
 
     if args.algorithm == TTFA':
-        tta = FAN(featurizer, classifier, n_outputs, args)
+        tta = TTFA(featurizer, classifier, n_outputs, args)
 
     acc, auc, f1, mis_rate = adaptation(featurizer, classifier, feature_loader, algorithm=tta, adapt=True, device=device)
     print(args.algorithm)
