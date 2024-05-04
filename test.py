@@ -173,31 +173,31 @@ if __name__ == "__main__":
     if args.network == 'resnet-34':
         model = torchvision.models.resnet34()
         model.fc = nn.Linear(512, 5)
-        ckpt = torch.load(r'./results/DR66k_resnet-34_20_acc0.8468_auc0.8846.pth')
+        ckpt = torch.load(r'./results/DR66k_resnet-34.pth')
     elif args.network == 'resnet-50':
         model = torchvision.models.resnet50()
         model.fc = nn.Linear(2048, 5)
-        ckpt = torch.load(r'./results/DR66k_resnet-50_20_acc0.8573_auc0.8936.pth')
+        ckpt = torch.load(r'./results/DR66k_resnet-50.pth')
     elif args.network == 'efficientnet-b1':
         model = torchvision.models.efficientnet_b1()
         model.classifier = nn.Linear(1280, 5)
-        ckpt = torch.load(r'.\results\DR66k_efficientnet-b1_20_acc0.8724_auc0.9067.pth')
+        ckpt = torch.load(r'.\results\DR66k_efficientnet-b1.pth')
     elif args.network == 'vit-t16':
         model = timm.create_model('vit_tiny_patch16_224.augreg_in21k_ft_in1k', pretrained=False)
         model.reset_classifier(num_classes=5)
-        ckpt = torch.load(r'.\results\DR_66k_vit-t16_20_acc0.8412_auc0.8815.pth')
+        ckpt = torch.load(r'.\results\DR_66k_vit-t16.pth')
     elif args.network == 'vit-s16':
         model = timm.create_model('vit_small_patch16_224.augreg_in1k', pretrained=False)
         model.reset_classifier(num_classes=5)
-        ckpt = torch.load(r'.\results\DR66k_vit-s16_20_acc0.8387_auc0.8823.pth')
+        ckpt = torch.load(r'.\results\DR66k_vit-s16.pth')
     elif args.network == 'swinv2':
         model = timm.create_model('swinv2_cr_tiny_ns_224.sw_in1k', pretrained=False)
         model.reset_classifier(num_classes=5)
-        ckpt = torch.load(r'./results/DR66k_swinv2_best_acc0.8515_auc0.8872.pth')
+        ckpt = torch.load(r'./results/DR66k_swinv2.pth')
     elif args.network == 'convit-s':
         model = timm.create_model('convit_small.fb_in1k', pretrained=False)
         model.reset_classifier(num_classes=5)
-        ckpt = torch.load(r'./results/DK66k_convit-s_15_acc0.8447_auc0.8842.pth')
+        ckpt = torch.load(r'./results/DK66k_convit-s2.pth')
 
     model.load_state_dict(ckpt)
     model = model.to(device)
